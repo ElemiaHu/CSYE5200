@@ -1,0 +1,15 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+span {
+  display: inline-block;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 10px;
+
+  font-family: 'Poppins', sans-serif;
+}
