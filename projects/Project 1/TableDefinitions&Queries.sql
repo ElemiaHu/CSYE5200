@@ -1,7 +1,7 @@
 -- Table Definitions
 CREATE TABLE "Users" (
 	"user_id"	INTEGER NOT NULL,
-	"username"	TEXT NOT NULL,
+	"username"	TEXT NOT NULL UNIQUE,
 	"email_address"	TEXT NOT NULL,
 	"first_name"	TEXT,
 	"last_name"	TEXT,

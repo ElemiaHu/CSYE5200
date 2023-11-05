@@ -13,3 +13,35 @@ span {
 
   font-family: 'Poppins', sans-serif;
 }
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 60px auto;
+  grid-template-areas: 
+    "add edit"
+    "data edit";
+}
+
+.new-event-button {
+  grid-area: add;
+  min-height: 50px;
+}
+
+.events {
+  grid-area: data;
+
+  overflow-y: auto;
+}
+
+.event-detail {
+  grid-area: edit;
+}
+
+
