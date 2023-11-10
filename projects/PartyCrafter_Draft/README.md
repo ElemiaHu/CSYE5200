@@ -14,4 +14,4 @@ Prerequisites: Have Node.js installed on your local machine.
 5. Open browser and go to `http://localhost:3000`
 
 ## Notes
-I 'm still working on some features in this application. Sorry for the inconvenience.
+To get a better image of this application, try logging in with "test_user" first.
