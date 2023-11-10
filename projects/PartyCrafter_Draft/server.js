@@ -19,7 +19,14 @@ const {
     updateEventBudget,
     addNewGuest,
     deleteEvent,
-    getEventDataByEventId,} = require('./db/dbConnector_Sqlite');
+    getEventDataByEventId,
+    deleteGuest,
+    updateGuest,
+    addNewExpense,
+    deleteExpense,
+    addTodo,
+    deleteTodo,
+    markDone,} = require('./db/dbConnector_Sqlite');
 
 const sessions = require('./sessions');
 
@@ -110,16 +117,43 @@ app.get('/api/event/guests/:eventId', async (req, res) => {
 // add a new guest for a certain event
 app.post('/api/event/guests/:eventId', async (req, res) => {
     const { eventId } = req.params;
-    const { name, contact } = req.body;
+    const { name, contact, RSVP_status } = req.body;
 
     try {
-        const guestId = await addNewGuest(eventId, name, contact);
+        const guestId = await addNewGuest(eventId, name, contact, RSVP_status);
         res.json({ guestId });
     } catch (error) {
         res.status(500).json({ error: 'Internal Server Error' });
     }
-})
+});
 
+// delete a guest for a certain event
+app.delete('/api/event/guests/:guestId', async (req, res) => {
+    const { guestId } = req.params;
+
+    try {
+        await deleteGuest(guestId);
+        res.json({ result: 'Guest Deleted' });
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+});
+
+// update a guest information and RSVP status for a certain event
+app.patch('/api/event/guest/:guestId', async (req, res) => {
+    const { guestId } = req.params;
+    const { name, contact, RSVP_status, eventId } = req.body;
+
+    try {
+        await updateGuest(guestId, eventId, name, contact, RSVP_status);
+        res.json({ result: 'Guest Updated' });
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+// To-do Items
 // get all todo items for a certain event
 app.get('/api/event/todo/:eventId', async (req, res) => {
     const {eventId} = req.params;
@@ -132,8 +166,48 @@ app.get('/api/event/todo/:eventId', async (req, res) => {
     }
 });
 
+// add a to-do item
+app.post('/api/event/todo/:eventId', async (req, res) => {
+    const { eventId } = req.params;
+    const { item_description, deadline, priority_levels } = req.body;
+
+    try {
+        const itemId = await addTodo(eventId, item_description, deadline, priority_levels);
+        res.json({ itemId });
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+// delete a to-do item
+app.delete('/api/event/todo/:itemId', async (req, res) => {
+    const { itemId } = req.params;
+
+    try {
+        await deleteTodo(itemId);
+        res.json({ result: 'To-do item Deleted' });
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+});
+
+// mark a to-do item as done
+app.patch('/api/event/todo/:itemId', async (req, res) => {
+    const { itemId } = req.params;
+
+    try {
+        await markDone(itemId);
+        res.json({ result: 'To-do item Deleted' });
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+})
+
+// Expenses
 // get all expenses for a certain event
-app.get('/api/event/expense/:eventId', async (req, res) => {
+app.get('/api/event/expenses/:eventId', async (req, res) => {
     const {eventId} = req.params;
 
     try {
@@ -142,6 +216,32 @@ app.get('/api/event/expense/:eventId', async (req, res) => {
     } catch (error) {
         res.status(500).json({ error:'Internal Server Error' });
     }
+});
+
+// add a new expense for a certain event
+app.post('/api/event/expenses/:eventId', async (req, res) => {
+    const { eventId } = req.params;
+    const { amount_spent, date_spent, expense_description } = req.body;
+
+    try {
+        const expenseId = await addNewExpense(eventId, amount_spent, date_spent, expense_description);
+        res.json({ expenseId });
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+// delete an expense for a certain event
+app.delete('/api/event/expenses/:expenseId', async (req, res) => {
+    const { expenseId } = req.params;
+
+    try {
+        await deleteExpense(expenseId);
+        res.json({ result: 'Expense Deleted' });
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+
 });
 
 app.patch('/event/updateBudget/:eventId', async (req, res) => {

@@ -1,7 +1,7 @@
 -- Table Definitions
 CREATE TABLE "Users" (
 	"user_id"	INTEGER NOT NULL,
-	"username"	TEXT NOT NULL UNIQUE,
+	"username"	TEXT NOT NULL,
 	"email_address"	TEXT NOT NULL,
 	"first_name"	TEXT,
 	"last_name"	TEXT,
@@ -58,6 +58,7 @@ CREATE TABLE "TodoItems" (
 	"item_description"	TEXT NOT NULL,
 	"deadline"	TEXT NOT NULL,
 	"priority_levels"	INTEGER,
+	"is_done"	INTEGER NOT NULL,
 	FOREIGN KEY("event_id") REFERENCES "Events"("event_id"),
 	PRIMARY KEY("item_id")
 );

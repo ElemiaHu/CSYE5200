@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
-import { fetchEventDetails, fetchEventGuests, fetchEventTodo, fetchEventExpenses } from "./services";
-import { Button, Container, ListGroup, ListGroupItem } from "react-bootstrap";
+import { fetchEventDetails, fetchEventGuests, fetchAddGuest, fetchEventTodo, fetchAddTodo, fetchEventExpenses, fetchAddExpense } from "./services";
+import { Button, ListGroup, ListGroupItem, Stack } from "react-bootstrap";
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Guest from "./Guest";
+import TodoItem from "./TodoItem";
+import Expense from "./Expense";
 
 function Event({ eventState }) {
 
@@ -14,6 +15,10 @@ function Event({ eventState }) {
     const [ guests, setGuests ] = useState([]);
     const [ todo, setTodo ] = useState([]);
     const [ expenses, setExpenses ] = useState([]);
+
+    const [ newGuest, setNewGuest ] = useState({});
+    const [ newTodo, setNewTodo ] = useState({});
+    const [ newExpense, setNewExpense ] = useState({});
 
     function onFetchEventDetail(eventId) {
         fetchEventDetails(eventId).then( response => {
@@ -33,9 +38,27 @@ function Event({ eventState }) {
         })
     }
 
+    function onFetchAddGuest(eventId, guestDetails) {
+        fetchAddGuest(eventId, guestDetails).then( response => {
+            onFetchEventGuests(eventId);
+        })
+        .catch( error => {
+            console.log(error);
+        });
+    }
+
     function onFetchEventTodo(eventId) {
         fetchEventTodo(eventId).then( response => {
             setTodo(response);
+        })
+        .catch( error => {
+            console.log(error);
+        })
+    }
+
+    function onFetchAddTodo(eventId, todoDetails) {
+        fetchAddTodo(eventId, todoDetails).then( response => {
+            onFetchEventTodo(eventId);
         })
         .catch( error => {
             console.log(error);
@@ -51,6 +74,15 @@ function Event({ eventState }) {
         })
     }
 
+    function onFetchAddExpense(eventId, expenseDetails) {
+        fetchAddExpense(eventId, expenseDetails).then( response => {
+            onFetchEventExpenses(eventId);
+        })
+        .catch( error => {
+            console.log(error);
+        });
+    }
+
     useEffect( () => {
         onFetchEventDetail(eventState);
         onFetchEventGuests(eventState);
@@ -60,78 +92,106 @@ function Event({ eventState }) {
 
     return (
         <div>
-            Event #{eventState} Details
-            <div>
-                {eventDetails.length !== 0 &&
-                <div>
-                    {eventDetails[0].name}
-                    {eventDetails[0].date_time}
-                    {eventDetails[0].location}
-                    {eventDetails[0].budget}
-                    {eventDetails[0].type}
-                </div>}
-            </div>
+            <div className="detail-title">Event Detail</div>
+            {eventDetails.length !== 0 &&
+            <Stack gap={3} className="mb-4 col-lg-6 mx-auto">
+                <Stack gap={5} direction="horizontal">
+                    <div className="p-2">Name:</div>
+                    <div className="p-2 ms-auto">{eventDetails[0].name}</div>
+                </Stack>
+                <Stack gap={5} direction="horizontal">
+                    <div className="p-2">When:</div>
+                    <div className="p-2 ms-auto">{eventDetails[0].date_time}</div>
+                </Stack>
+                <Stack gap={5} direction="horizontal">
+                    <div className="p-2">Location:</div>
+                    <div className="p-2 ms-auto">{eventDetails[0].location}</div>
+                </Stack>
+                <Stack gap={5} direction="horizontal">
+                    <div className="p-2">Budget:</div>
+                    <div className="p-2 ms-auto">{eventDetails[0].budget}</div>
+                </Stack>
+                <Stack gap={5} direction="horizontal">
+                    <div className="p-2">Type:</div>
+                    <div className="p-2 ms-auto">{eventDetails[0].type}</div>
+                </Stack>
+            </Stack>
+            }
+            
 
-            <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
+            <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-2" justify>
 
+                {/* Guest */}
                 <Tab eventKey="guests" title="Guests">
-                    <ListGroup variant="flush">
+                    <ListGroup variant="flush" className="event-info">
                         {guests.length !== 0 && guests.map( (guest, index) => (
                             <ListGroupItem key={index}>
-                                <Container>
-                                    <Row>
-                                        <Col sm={true}>{guest.name}</Col>
-                                        <Col md={true}>{guest.contact}</Col>
-                                        <Col sm={true}>{guest.RSVP_status}</Col>
-                                    </Row>
-                                </Container>
+                                <Guest guest={guest} onFetchEventGuests={onFetchEventGuests} eventId={eventState}/>
                             </ListGroupItem>
                         ))}
                     </ListGroup>
-                
-                    <div>
-                        <Button>Add a New Guest</Button>
-                    </div>
+                    
+                    {/* Adding a new guest */}
+                    <Stack gap={3} className="add-stack">
+                        <div className="mx-auto">Add a new Guest</div>
+                        <div className="mx-auto"><input type="text" placeholder="Guest Name" value={newGuest.name || ''} onInput={(e) => setNewGuest({...newGuest, name: e.target.value})}/></div>
+                        <div className="mx-auto"><input type="text" placeholder="Contact Info" value={newGuest.contact || ''} onInput={(e) => setNewGuest({...newGuest, contact: e.target.value})}/></div>
+                        <div className="mx-auto"><input type="text" placeholder="RSVP Status" value={newGuest.RSVP_status || ''} onInput={(e) => setNewGuest({...newGuest, RSVP_status: e.target.value})}/></div>
+                        <div className="mx-auto"><Button variant="success" onClick={() => {
+                                onFetchAddGuest(eventState, newGuest);
+                                setNewGuest({});
+                            }}>Add</Button></div>
+                    </Stack>
                 </Tab>
 
+                {/* To-do List */}
                 <Tab eventKey="to-do-lists" title="To-do List">
-                    <ListGroup variant="flush">
+                    <ListGroup variant="flush"  className="event-info">
                         {todo.length !== 0 && todo.map( (todoItem, index) => (
                             <ListGroupItem key={index}>
-                                <Container>
-                                    <Row>
-                                        <Col md={true}>{todoItem.item_description}</Col>
-                                        <Col lg={true}>{todoItem.deadline}</Col>
-                                        <Col sm={true}>{todoItem.priority_levels}</Col>
-                                    </Row>
-                                </Container>
+                                <TodoItem todoItem={todoItem} onFetchEventTodo={onFetchEventTodo} eventId={eventState}/>
                             </ListGroupItem>
                         ))}
                     </ListGroup>
                 
-                    <div>
-                        <Button>Add a New To-do</Button>
-                    </div>
+                    {/* Adding a new to-do item */}
+                    <Stack gap={3} className="add-stack">
+                        <div className="mx-auto">Add a new To-do</div>
+                        <div className="mx-auto"><input type="text" placeholder="To-do" value={newTodo.item_description || ''} onInput={(e) => setNewTodo({...newTodo, item_description: e.target.value})}/></div>
+                        <div className="mx-auto"><input type="date" value={newTodo.deadline || ''} onInput={(e) => setNewTodo({...newTodo, deadline: e.target.value})}/></div>
+                        <div className="mx-auto"><input type="number" placeholder="Priority Level" value={newTodo.priority_levels || ''} onInput={(e) => setNewTodo({...newTodo, priority_levels: e.target.value})}/></div>
+                        <div className="mx-auto">
+                            <Button variant="success" onClick={() => {
+                                onFetchAddTodo(eventState, newTodo);
+                                setNewTodo({});
+                            }}>Add</Button>
+                        </div>
+                    </Stack>
                 </Tab>
 
+                {/* Expense */}
                 <Tab eventKey="expenses" title="Expenses">
-                    <ListGroup variant="flush">
+                    <ListGroup variant="flush"  className="event-info">
                         {expenses.length !== 0 && expenses.map( (expense, index) => (
                             <ListGroupItem key={index}>
-                                <Container>
-                                    <Row>
-                                        <Col md={true}>{expense.expense_description}</Col>
-                                        <Col lg={true}>{expense.date_spent}</Col>
-                                        <Col sm={true}>${expense.amount_spent}</Col>
-                                    </Row>
-                                </Container>
+                                <Expense expense={expense} onFetchEventExpenses={onFetchEventExpenses} eventId={eventState}/>
                             </ListGroupItem>
                         ))}
                     </ListGroup>
-                
-                    <div>
-                        <Button>Add a New Expense</Button>
-                    </div>
+                    
+                    {/* Adding a new expense record */}
+                    <Stack gap={3} className="add-stack">
+                        <div className="mx-auto">Add a new Expense</div>
+                        <div className="mx-auto"><input type="text" placeholder="Description" value={newExpense.expense_description || ''} onInput={(e) => setNewExpense({...newExpense, expense_description: e.target.value})}/></div>
+                        <div className="mx-auto"><input type="date" placeholder="Date Spent" value={newExpense.date_spent || ''} onInput={(e) => setNewExpense({...newExpense, date_spent: e.target.value})}/></div>
+                        <div className="mx-auto"><input type="number" placeholder="$" value={newExpense.amount_spent || ''} onInput={(e) => setNewExpense({...newExpense, amount_spent: e.target.value})}/></div>
+                        <div className="mx-auto">
+                            <Button variant="success" onClick={() => {
+                                onFetchAddExpense(eventState, newExpense);
+                                setNewExpense({});
+                            }}>Add</Button>
+                        </div>
+                    </Stack>
                 </Tab>
             </Tabs>
 

@@ -73,6 +73,7 @@ export function fetchEventDetails(eventId) {
     });
 }
 
+// Guests services
 export function fetchEventGuests(eventId) {
     return fetch(`/api/event/guests/${eventId}`)
     .catch( () => Promise.reject({ error: 'network-error' }))
@@ -101,6 +102,32 @@ export function fetchAddGuest(eventId, guestDetails) {
     });
 }
 
+export function fetchDeleteGuest(guestId) {
+    return fetch(`/api/event/guests/${guestId}`, {
+        method: 'DELETE',
+    })
+    .catch( () => Promise.reject({ error: 'network-error' }))
+    .then( response => {
+        return response.json();
+    });
+}
+
+export function fetchUpdateGuest(guestId, eventId, guestDetail) {
+    return fetch(`/api/event/guest/${guestId}`, {
+        method: 'PATCH',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify({...guestDetail, eventId}),
+    })
+    .catch( () => Promise.reject({ error: 'network-error' }))
+    .then( response => {
+        return response.json();
+    });
+
+}
+
+// To-do services
 export function fetchEventTodo(eventId) {
     return fetch(`/api/event/todo/${eventId}`)
     .catch( () => Promise.reject({ error: 'network-error' }))
@@ -112,13 +139,78 @@ export function fetchEventTodo(eventId) {
     });
 }
 
-export function fetchEventExpenses(eventId) {
-    return fetch(`/api/event/expense/${eventId}`)
+export function fetchAddTodo(eventId, todoDetails) {
+    return fetch(`/api/event/todo/${eventId}`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify(todoDetails),
+    })
     .catch( () => Promise.reject({ error: 'network-error' }))
     .then( response => {
         if(!response.ok) {
             return response.json().then(error => Promise.reject(error));
         }
+        return response.json();
+    });
+}
+
+export function fetchDeleteTodo(itemId) {
+    return fetch(`/api/event/todo/${itemId}`, {
+        method: 'DELETE',
+    })
+    .catch( () => Promise.reject({ error: 'network-error' }))
+    .then( response => {
+        return response.json();
+    });
+}
+
+export function fetchMarkDone(itemId) {
+    return fetch(`/api/event/todo/${itemId}`, {
+        method: 'PATCH',
+    })
+    .catch( () => Promise.reject({ error: 'network-error' }))
+    .then( response => {
+        return response.json();
+    });
+}
+
+// Expenses services
+export function fetchEventExpenses(eventId) {
+    return fetch(`/api/event/expenses/${eventId}`)
+    .catch( () => Promise.reject({ error: 'network-error' }))
+    .then( response => {
+        if(!response.ok) {
+            return response.json().then(error => Promise.reject(error));
+        }
+        return response.json();
+    });
+}
+
+export function fetchAddExpense(eventId, expenseDetails) {
+    return fetch(`/api/event/expenses/${eventId}`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify(expenseDetails),
+    })
+    .catch( () => Promise.reject({ error: 'network-error' }))
+    .then( response => {
+        if(!response.ok) {
+            return response.json().then(error => Promise.reject(error));
+        }
+        return response.json();
+    });
+}
+
+export function fetchDeleteExpense(expenseId) {
+    return fetch(`/api/event/expenses/${expenseId}`, {
+        method: 'DELETE',
+    })
+    .catch( () => Promise.reject({ error: 'network-error' }))
+    .then( response => {
         return response.json();
     });
 }
