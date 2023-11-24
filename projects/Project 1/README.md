@@ -12,4 +12,4 @@ This is the database design for CSYE5200 Project 1.
 
 4. Table creation and sample queries can be found [here](./TableDefinitions&Queries.sql).
 
-5. The basic Node + Express + React application is located [here](../PartyCrafter_Draft). For further information about this web application, please refer to the readme document inside this project.
+5. The basic Node + Express + React application is located [here](../PartyCrafter). For further information about this web application, please refer to the readme document inside this project.
