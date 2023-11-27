@@ -1,6 +1,8 @@
 # Party Crafter
 
-This is a basic Node + Express + React application simply for CSYE5200 Project 1.
+This is a basic Node + Express + React application simply for CSYE5200 Project 2.
+
+Compared to Project 1, this version of Party Crafter uses MongoDB as its database.
 
 ## How to run
 
@@ -14,4 +16,4 @@ Prerequisites: Have Node.js installed on your local machine.
 5. Open browser and go to `http://localhost:3000`
 
 ## Notes
-To get a better image of this application, try logging in with "test_user" first.
+To get a better image of this application, try logging in with "Elaine" first.

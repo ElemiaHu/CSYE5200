@@ -25,6 +25,7 @@ Sample entry for the Users collection:
 
 ### Events
 Sample entry for the Events collection:
+
 Self-owned Events:
 ```
 {
