@@ -96,80 +96,27 @@ async function markDone(itemId) {
     }
 }
 
-// get event guests
-async function getEventGuests(eventId) {
+// add a regular guest from event guests
+async function addEventGuestToRegular(userId, guest) {
     try {
         await client.connect();
 
         const database = client.db('PartyCrafter');
-        const events = database.collection('Events');
+        const users = database.collection('Users');
 
-        const result = await events.aggregate([
-            { $match: { "_id": new ObjectId(eventId) }},
-            { $project: {
-                _id: 0,
-                "guests": 1,
-            }}
-        ]).toArray();
+        const guestExists = await users.findOne({
+            _id: new ObjectId(userId),
+            regular_guests: { $elemMatch: { guest_id: new ObjectId(guest.guest_id)}}
+        });
 
-        const { guests } = result.length > 0 ? result[0] : [];
-
-        return guests;
+        if(!guestExists) {
+            await users.updateOne(
+                { _id: new ObjectId(userId) },
+                { $push: { regular_guests: guest }},
+            );
+        }
 
     } finally {
         await client.close();
     }
 }
-
-async function addData(eventId) {
-    try {
-        await client.connect();
-
-        const database = client.db('PartyCrafter');
-        const events = database.collection('Events');
-
-        const todos = [
-            {
-              description: 'Prepare board games',
-              deadline: '2023-12-15T18:00:00.000Z',
-              priority_level: 2,
-              todo_id: new ObjectId(),
-            },
-            {
-              description: 'Set up gaming area',
-              deadline: '2023-12-17T15:00:00.000Z',
-              priority_level: 3,
-              todo_id: new ObjectId(),
-            },
-            {
-              description: 'Order snacks and drinks',
-              deadline: '2023-12-10T12:00:00.000Z',
-              priority_level: 1,
-              todo_id: new ObjectId(),
-            },
-            {
-              description: 'Create a playlist',
-              deadline: '2023-12-18T14:00:00.000Z',
-              priority_level: 2,
-              todo_id: new ObjectId(),
-            },
-            {
-              description: 'Confirm attendance of guests',
-              priority_level: 1,
-              todo_id: new ObjectId(),
-            }
-          ];
-          
-           
-          
-        await events.updateOne(
-            { _id: new ObjectId(eventId) },
-            { $push: { todo: { $each: todos } } }
-        );
-
-    } finally {
-        await client.close();
-    }
-}
-
-addData('656283c4ad121ede14fa880d')

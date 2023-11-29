@@ -1,12 +1,13 @@
 const { MongoClient, ObjectId } = require("mongodb");
 const client = new MongoClient('mongodb://localhost:27017');
+const databaseName = 'PartyCrafter';
 
 // User Info
 async function checkUsername(username) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const users = database.collection('Users');
 
         const user = await users.findOne({ "username": username });
@@ -23,11 +24,12 @@ async function newUser(username) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const users = database.collection('Users');
 
         const result = await users.insertOne({ 
             "username": username,
+            "regular_guests": [],
         });
 
         if (result) return result.insertedId.toString();
@@ -43,7 +45,7 @@ async function getEventData(userId) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
         const result = await events.find({ 
@@ -64,7 +66,7 @@ async function addEvent(name, description, date_time, location, budget, type, us
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
         const eventDoc = {
@@ -96,7 +98,7 @@ async function getEventDataByEventId(eventId) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
         const result = await events.findOne({ "_id": new ObjectId(eventId) });
@@ -112,7 +114,7 @@ async function deleteEvent(eventId) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
         const result = await events.deleteOne({ "_id": new ObjectId(eventId) });
@@ -129,7 +131,7 @@ async function getEventGuests(eventId) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
         const result = await events.aggregate([
@@ -153,7 +155,7 @@ async function addNewGuest(eventId, name, contact, status) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
         const newGuest = {
@@ -178,15 +180,13 @@ async function deleteGuest(guestId) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
-        const result = await events.updateOne(
+        await events.updateOne(
             { "guests.guest_id": new ObjectId(guestId) },
             { $pull: { guests: { guest_id: new ObjectId(guestId) }}}
         );
-
-        console.log(result);
 
     } finally {
         await client.close();
@@ -197,10 +197,10 @@ async function updateGuest(guestId, name, contact, RSVP_status) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
-        const result = await events.updateOne(
+        await events.updateOne(
             { "guests.guest_id": new ObjectId(guestId) },
             { $set: {
                 "guests.$.name": name,
@@ -209,7 +209,6 @@ async function updateGuest(guestId, name, contact, RSVP_status) {
             }}
         );
 
-        console.log(result);
     } finally {
         await client.close();
     }
@@ -220,7 +219,7 @@ async function getEventTodo(eventId) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
         const result = await events.aggregate([
@@ -244,17 +243,15 @@ async function markDone(itemId) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
-        const result = await events.updateOne(
+        await events.updateOne(
             { "todo.todo_id": new ObjectId(itemId) },
             { $set: {
                 "todo.$.is_done": true,
             }}
         );
-
-        console.log(result);
     } finally {
         await client.close();
     }
@@ -264,7 +261,7 @@ async function addTodo(eventId, description, deadline, priorityLevel) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
         const newTodo = {
@@ -289,7 +286,7 @@ async function deleteTodo(itemId) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
         const result = await events.updateOne(
@@ -309,7 +306,7 @@ async function getEventExpenses(eventId) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
         const result = await events.aggregate([
@@ -333,7 +330,7 @@ async function addNewExpense(eventId, amount, date, description) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
         const newExpense = {
@@ -359,7 +356,7 @@ async function deleteExpense(expenseId) {
     try {
         await client.connect();
 
-        const database = client.db('PartyCrafter');
+        const database = client.db(databaseName);
         const events = database.collection('Events');
 
         const result = await events.updateOne(
