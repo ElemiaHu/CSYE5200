@@ -18,4 +18,4 @@ This directory contains every document needed for project 2.
    mongoimport -h localhost:27017 -d PartyCrafter -c Events --file db/PartyCrafter.Events.json --jsonArray
    ```
 3. Data will be added to your local Mongo server and you can run the application with mockup data.
-4. If you want to run the application with a new database, make sure to change the databaseName in the [mongoConnector.js](./PartyCrafter_Mongodb/db/mongoConnector.js) file.
+4. If you want to run the application with a new database, make sure to change the databaseName in the [mongoConnector.js](./PartyCrafter_Mongo/db/mongoConnector.js) file.
