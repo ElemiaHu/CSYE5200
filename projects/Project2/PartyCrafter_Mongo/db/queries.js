@@ -120,3 +120,56 @@ async function getEventGuests(eventId) {
         await client.close();
     }
 }
+
+async function addData(eventId) {
+    try {
+        await client.connect();
+
+        const database = client.db('PartyCrafter');
+        const events = database.collection('Events');
+
+        const todos = [
+            {
+              description: 'Prepare board games',
+              deadline: '2023-12-15T18:00:00.000Z',
+              priority_level: 2,
+              todo_id: new ObjectId(),
+            },
+            {
+              description: 'Set up gaming area',
+              deadline: '2023-12-17T15:00:00.000Z',
+              priority_level: 3,
+              todo_id: new ObjectId(),
+            },
+            {
+              description: 'Order snacks and drinks',
+              deadline: '2023-12-10T12:00:00.000Z',
+              priority_level: 1,
+              todo_id: new ObjectId(),
+            },
+            {
+              description: 'Create a playlist',
+              deadline: '2023-12-18T14:00:00.000Z',
+              priority_level: 2,
+              todo_id: new ObjectId(),
+            },
+            {
+              description: 'Confirm attendance of guests',
+              priority_level: 1,
+              todo_id: new ObjectId(),
+            }
+          ];
+          
+           
+          
+        await events.updateOne(
+            { _id: new ObjectId(eventId) },
+            { $push: { todo: { $each: todos } } }
+        );
+
+    } finally {
+        await client.close();
+    }
+}
+
+addData('656283c4ad121ede14fa880d')
