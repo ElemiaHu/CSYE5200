@@ -8,12 +8,11 @@ Compared to the Party Crafter in Project 2, this project utilized Redis for sess
 
 Prerequisites: Have MongoDB and Redis installed on your local machine.
 
-1. Under the PartyCrafter_Mongo directoty, run the following commands
+1. Under the PartyCrafter_Mongo directoty, run the following commands and data will be added to your local Mongo server.
 ```
 mongoimport -h localhost:27017 -d PartyCrafter -c Users --file db/PartyCrafter.Users.json --jsonArray
 mongoimport -h localhost:27017 -d PartyCrafter -c Events --file db/PartyCrafter.Events.json --jsonArray
 ```
-Data will be added to your local Mongo server.
 2. Run `redis-server` in the terminal.
 3. Now you can run the application with mockup data.
 
