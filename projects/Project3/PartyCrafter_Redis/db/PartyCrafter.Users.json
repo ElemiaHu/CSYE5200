@@ -1,0 +1,306 @@
+[{
+  "_id": {
+    "$oid": "65626777ad121ede14fa87e3"
+  },
+  "username": "test_user01",
+  "email": "testuser@outlook.com",
+  "mobile": "111-223-7788",
+  "first_name": "test",
+  "last_name": "user",
+  "regular_guests": [
+    {
+      "name": "John Doe",
+      "contact": "565-898-3344",
+      "category": "family",
+      "guest_id": {
+        "$oid": "656279a3ad121ede14fa87fa"
+      }
+    },
+    {
+      "name": "Francis",
+      "contact": "francis@ucsd.edu",
+      "category": "coworkers",
+      "guest_id": {
+        "$oid": "656279b4ad121ede14fa87fb"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87e6"
+  },
+  "username": "Elaine",
+  "email": "in.nec@google.edu",
+  "mobile": "(905) 366-1451",
+  "first_name": "Amal",
+  "last_name": "Beard",
+  "regular_guests": [
+    {
+      "name": "Claire",
+      "contact": "999-366-1451",
+      "category": "family",
+      "guest_id": {
+        "$oid": "656279eaad121ede14fa87fc"
+      }
+    },
+    {
+      "name": "Emily",
+      "RSVP_status": "Not Attending",
+      "contact": "555-5678",
+      "guest_id": {
+        "$oid": "65628a51ad121ede14fa8819"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87e7"
+  },
+  "username": "Keith",
+  "email": "luctus.sit.amet@yahoo.edu",
+  "mobile": "(165) 483-5712",
+  "first_name": "Grant",
+  "last_name": "Hutchinson",
+  "regular_guests": [
+    {
+      "name": "Yasir Patterson",
+      "phone": "1-554-297-3661",
+      "category": "Family",
+      "guest_id": {
+        "$oid": "65644b82105b2e412504001c"
+      }
+    },
+    {
+      "name": "Chandler Rivers",
+      "phone": "1-342-946-4377",
+      "category": "Family",
+      "guest_id": {
+        "$oid": "65644b8c105b2e412504001d"
+      }
+    },
+    {
+      "name": "Christen Ellis",
+      "phone": "(276) 801-8691",
+      "category": "Family",
+      "guest_id": {
+        "$oid": "65644b96105b2e412504001e"
+      }
+    },
+    {
+      "name": "Cullen Henderson",
+      "phone": "1-467-151-2539",
+      "category": "Family",
+      "guest_id": {
+        "$oid": "65644ba0105b2e412504001f"
+      }
+    },
+    {
+      "name": "Cameron Turner",
+      "phone": "(664) 673-6117",
+      "category": "Family",
+      "guest_id": {
+        "$oid": "65644ba9105b2e4125040020"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87e8"
+  },
+  "username": "Marcia",
+  "email": "sagittis.semper@protonmail.edu",
+  "mobile": "1-313-691-1221",
+  "first_name": "Brendan",
+  "last_name": "Knowles"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87e9"
+  },
+  "username": "Blake",
+  "email": "suspendisse.eleifend@yahoo.edu",
+  "mobile": "1-251-359-7551",
+  "first_name": "Adrienne",
+  "last_name": "Jenkins"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87ea"
+  },
+  "username": "Benjamin",
+  "email": "tristique.senectus.et@outlook.ca",
+  "mobile": "(191) 742-1173",
+  "first_name": "Roanna",
+  "last_name": "Fulton"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87eb"
+  },
+  "username": "Neil",
+  "email": "nec@hotmail.couk",
+  "mobile": "(398) 377-4955",
+  "first_name": "Karleigh",
+  "last_name": "Branch"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87ec"
+  },
+  "username": "Genevieve",
+  "email": "cras.sed.leo@icloud.ca",
+  "mobile": "(372) 232-4239",
+  "first_name": "Wanda",
+  "last_name": "Higgins"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87ed"
+  },
+  "username": "April",
+  "email": "aliquam.eu.accumsan@hotmail.ca",
+  "mobile": "(127) 762-8598",
+  "first_name": "Melinda",
+  "last_name": "Weaver"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87ee"
+  },
+  "username": "Drew",
+  "email": "mauris.id@google.couk",
+  "mobile": "1-614-381-6700",
+  "first_name": "Kylee",
+  "last_name": "Oneil"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87ef"
+  },
+  "username": "Seth",
+  "email": "dictum.mi@aol.org",
+  "mobile": "(738) 873-1887",
+  "first_name": "Cheyenne",
+  "last_name": "Macias"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87f0"
+  },
+  "username": "Sara",
+  "email": "aliquet.molestie@yahoo.edu",
+  "mobile": "1-919-811-7042",
+  "first_name": "Mariko",
+  "last_name": "Blevins"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87f1"
+  },
+  "username": "April",
+  "email": "ultrices.mauris@google.com",
+  "mobile": "1-445-935-1823",
+  "first_name": "Derek",
+  "last_name": "Evans"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87f2"
+  },
+  "username": "Rashad",
+  "email": "faucibus.morbi.vehicula@protonmail.com",
+  "mobile": "1-266-843-1730",
+  "first_name": "Ella",
+  "last_name": "Moran"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87f3"
+  },
+  "username": "Austin",
+  "email": "aliquet@aol.edu",
+  "mobile": "(815) 766-2765",
+  "first_name": "Dieter",
+  "last_name": "Craft"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87f4"
+  },
+  "username": "Emily",
+  "email": "lectus@outlook.com",
+  "mobile": "1-760-228-4864",
+  "first_name": "Basil",
+  "last_name": "Hess"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87f5"
+  },
+  "username": "Blossom",
+  "email": "a.scelerisque@aol.org",
+  "mobile": "(553) 737-3386",
+  "first_name": "Amos",
+  "last_name": "Holloway"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87f6"
+  },
+  "username": "Pamela",
+  "email": "sit.amet@hotmail.com",
+  "mobile": "(921) 831-3782",
+  "first_name": "Athena",
+  "last_name": "Fry"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87f7"
+  },
+  "username": "Orla",
+  "email": "aliquet.libero@outlook.com",
+  "mobile": "1-334-556-6222",
+  "first_name": "Margaret",
+  "last_name": "Guerrero"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87f8"
+  },
+  "username": "Ramona",
+  "email": "metus@hotmail.org",
+  "mobile": "1-791-274-9314",
+  "first_name": "Olympia",
+  "last_name": "Rasmussen"
+},
+{
+  "_id": {
+    "$oid": "65627316ad121ede14fa87f9"
+  },
+  "username": "Lacy",
+  "email": "felis.ullamcorper@icloud.org",
+  "mobile": "1-824-535-4576",
+  "first_name": "Maya",
+  "last_name": "Barron"
+},
+{
+  "_id": {
+    "$oid": "6562d88239ed39c09d15d84b"
+  },
+  "username": "test_user02"
+},
+{
+  "_id": {
+    "$oid": "6562d89f77e5a58f2358c3d7"
+  },
+  "username": "test_user03"
+},
+{
+  "_id": {
+    "$oid": "6562d8f38afb4b7c4e4b2c42"
+  },
+  "username": "test_user04"
+}]

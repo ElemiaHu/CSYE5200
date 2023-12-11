@@ -1,0 +1,1257 @@
+[{
+  "_id": {
+    "$oid": "65627cd7ad121ede14fa8803"
+  },
+  "name": "Alex's Graduation Celebration",
+  "is_active": true,
+  "description": "Alex is graduating with honors!",
+  "location": "home",
+  "budget": 2000,
+  "type": "self-owned",
+  "date_time": {
+    "$date": "2023-12-18T14:00:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Claire",
+      "RSVP_status": "Accepted",
+      "contact": "508-689-0012",
+      "guest_id": {
+        "$oid": "656289bbad121ede14fa8817"
+      }
+    },
+    {
+      "name": "Jay",
+      "contact": "123-456-7890",
+      "RSVP_status": "Accepted",
+      "guest_id": {
+        "$oid": "6562ea6658863745416bbfb6"
+      }
+    },
+    {
+      "name": "Gloria",
+      "contact": "gloria_p@outlook.com",
+      "RSVP_status": "Invited",
+      "guest_id": {
+        "$oid": "6563d0fc47710416216fd237"
+      }
+    },
+    {
+      "name": "Phil",
+      "contact": "phil_dunphy@real.com",
+      "RSVP_status": "Accepted",
+      "guest_id": {
+        "$oid": "6563d13447710416216fd238"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "65627316ad121ede14fa87e6"
+  },
+  "todo": [
+    {
+      "description": "Buy groceries",
+      "deadline": "2023-11-28T18:00:00.000Z",
+      "priority_level": 1,
+      "is_done": true,
+      "todo_id": {
+        "$oid": "65629010ad121ede14fa881b"
+      }
+    },
+    {
+      "description": "Schedule dentist appointment",
+      "deadline": "2023-11-30T09:00:00.000Z",
+      "priority_level": 3,
+      "is_done": true,
+      "todo_id": {
+        "$oid": "65629041ad121ede14fa881e"
+      }
+    },
+    {
+      "description": "Buy indoor decor",
+      "deadline": "2023-11-28",
+      "priority_level": "4",
+      "todo_id": {
+        "$oid": "6563d2bb47710416216fd239"
+      }
+    },
+    {
+      "description": "Order cake",
+      "deadline": "2023-12-13",
+      "priority_level": "3",
+      "todo_id": {
+        "$oid": "6563d30e47710416216fd23b"
+      }
+    }
+  ],
+  "expenses": [
+    {
+      "amount_spent": 50,
+      "date_spent": "2023-11-20T15:30:00.000Z",
+      "description": "Dinner with friends",
+      "expense_id": {
+        "$oid": "65629057ad121ede14fa881f"
+      }
+    },
+    {
+      "amount_spent": 25,
+      "date_spent": "2023-11-25T12:45:00.000Z",
+      "description": "Office supplies",
+      "expense_id": {
+        "$oid": "65629062ad121ede14fa8820"
+      }
+    },
+    {
+      "amount_spent": 120,
+      "date_spent": "2023-12-02T10:00:00.000Z",
+      "description": "Shopping for winter clothes",
+      "expense_id": {
+        "$oid": "6562906bad121ede14fa8821"
+      }
+    },
+    {
+      "amount_spent": 15,
+      "date_spent": "2023-12-10T08:30:00.000Z",
+      "description": "Coffee and snacks",
+      "expense_id": {
+        "$oid": "65629075ad121ede14fa8822"
+      }
+    },
+    {
+      "amount_spent": "45",
+      "date_spent": "2023-11-15",
+      "description": "Cake tasting",
+      "expense_id": {
+        "$oid": "6563d471489ab85406ef624f"
+      }
+    }
+  ],
+  "service_providers": [
+    {
+      "service_type": "Catering",
+      "contact": "123-456-7890",
+      "location": "Event Hall",
+      "estimated_price": 800,
+      "provider_id": {
+        "$oid": "65629085ad121ede14fa8823"
+      }
+    },
+    {
+      "service_type": "Photography",
+      "contact": "555-789-1234",
+      "location": "On-site",
+      "estimated_price": 500,
+      "provider_id": {
+        "$oid": "65629090ad121ede14fa8824"
+      }
+    },
+    {
+      "service_type": "Floral Arrangements",
+      "contact": "789-123-4567",
+      "location": "Local Flower Shop",
+      "estimated_price": 200,
+      "provider_id": {
+        "$oid": "6562909aad121ede14fa8825"
+      }
+    },
+    {
+      "service_type": "Event Planning",
+      "contact": "321-987-6543",
+      "location": "Consultation Office",
+      "estimated_price": 1000,
+      "provider_id": {
+        "$oid": "656290a5ad121ede14fa8826"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656283c4ad121ede14fa8809"
+  },
+  "name": "Birthday Bash",
+  "is_active": true,
+  "description": "Celebrate a special birthday!",
+  "location": "party venue",
+  "budget": 1500,
+  "type": "cohosted",
+  "date_time": {
+    "$date": "2023-11-30T20:00:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Claire",
+      "RSVP_status": "Accepted",
+      "contact": "508-689-0012",
+      "guest_id": {
+        "$oid": "65628a43ad121ede14fa8818"
+      }
+    },
+    {
+      "name": "Jay",
+      "RSVP_status": "Rejected",
+      "contact": "123-456-7890",
+      "guest_id": {
+        "$oid": "65628a51ad121ede14fa8819"
+      }
+    }
+  ],
+  "cohost": [
+    {
+      "$oid": "65626777ad121ede14fa87e3"
+    },
+    {
+      "$oid": "65627316ad121ede14fa87e6"
+    }
+  ],
+  "todo": [
+    {
+      "description": "Buy indoor decorations",
+      "deadline": {
+        "$date": "2023-11-28T18:00:00.000Z"
+      },
+      "priority_level": 5,
+      "todo_id": {
+        "$oid": "6562ee8191388230ab9e795f"
+      }
+    },
+    {
+      "description": "Buy a birthday cake",
+      "deadline": "2023-12-15T12:00:00.000Z",
+      "priority_level": 1,
+      "todo_id": {
+        "$oid": "6565461ca976f7df00be7688"
+      }
+    },
+    {
+      "description": "Prepare decorations",
+      "deadline": "2023-12-17T18:00:00.000Z",
+      "priority_level": 2,
+      "todo_id": {
+        "$oid": "6565461ca976f7df00be7689"
+      }
+    },
+    {
+      "description": "Invite guests",
+      "deadline": "2023-12-10T09:00:00.000Z",
+      "priority_level": 3,
+      "todo_id": {
+        "$oid": "6565461ca976f7df00be768a"
+      }
+    },
+    {
+      "description": "Plan activities",
+      "deadline": "2023-12-18T10:00:00.000Z",
+      "priority_level": 2,
+      "todo_id": {
+        "$oid": "6565461ca976f7df00be768b"
+      }
+    },
+    {
+      "description": "Buy gifts",
+      "priority_level": 1,
+      "todo_id": {
+        "$oid": "6565461ca976f7df00be768c"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656283c4ad121ede14fa880a"
+  },
+  "name": "Summer Picnic",
+  "is_active": true,
+  "description": "Enjoy a day outdoors!",
+  "location": "park",
+  "budget": 800,
+  "type": "self-owned",
+  "date_time": {
+    "$date": "2023-07-15T12:30:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Alice",
+      "RSVP_status": "Attending",
+      "contact": "987-6543",
+      "guest_id": {
+        "$oid": "656290f5ad121ede14fa8827"
+      }
+    },
+    {
+      "name": "Bob",
+      "RSVP_status": "Invited",
+      "contact": "123-4567",
+      "guest_id": {
+        "$oid": "656290ffad121ede14fa8828"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "65626777ad121ede14fa87e4"
+  },
+  "todo": [
+    {
+      "description": "Prepare picnic basket with sandwiches and snacks",
+      "deadline": "2023-06-15T12:00:00.000Z",
+      "priority_level": 1,
+      "todo_id": {
+        "$oid": "6565466990614e4439131f2b"
+      }
+    },
+    {
+      "description": "Pack sunscreen and insect repellent",
+      "deadline": "2023-06-17T18:00:00.000Z",
+      "priority_level": 2,
+      "todo_id": {
+        "$oid": "6565466990614e4439131f2c"
+      }
+    },
+    {
+      "description": "Bring picnic blankets and comfortable seating",
+      "deadline": "2023-06-10T09:00:00.000Z",
+      "priority_level": 3,
+      "todo_id": {
+        "$oid": "6565466990614e4439131f2d"
+      }
+    },
+    {
+      "description": "Organize outdoor games and activities",
+      "deadline": "2023-06-18T10:00:00.000Z",
+      "priority_level": 2,
+      "todo_id": {
+        "$oid": "6565466990614e4439131f2e"
+      }
+    },
+    {
+      "description": "Buy refreshing drinks and ice for coolers",
+      "priority_level": 1,
+      "todo_id": {
+        "$oid": "6565466990614e4439131f2f"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656283c4ad121ede14fa880b"
+  },
+  "name": "Movie Night",
+  "is_active": true,
+  "description": "Watch the latest releases!",
+  "location": "home theater",
+  "budget": 500,
+  "type": "self-owned",
+  "date_time": {
+    "$date": "2023-09-08T18:00:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "David",
+      "RSVP_status": "Not Attending",
+      "contact": "222-3333",
+      "guest_id": {
+        "$oid": "65629112ad121ede14fa8829"
+      }
+    },
+    {
+      "name": "Eva",
+      "RSVP_status": "Attending",
+      "contact": "444-5555",
+      "guest_id": {
+        "$oid": "6562911bad121ede14fa882a"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "65626777ad121ede14fa87e4"
+  },
+  "todo": [
+    {
+      "description": "Select movies to watch",
+      "deadline": "2023-12-15T18:00:00.000Z",
+      "priority_level": 2,
+      "todo_id": {
+        "$oid": "656546bb4bd332cf0b41a01f"
+      }
+    },
+    {
+      "description": "Prepare snacks and drinks",
+      "deadline": "2023-12-17T17:00:00.000Z",
+      "priority_level": 1,
+      "todo_id": {
+        "$oid": "656546bb4bd332cf0b41a020"
+      }
+    },
+    {
+      "description": "Set up the home theater system",
+      "deadline": "2023-12-10T12:00:00.000Z",
+      "priority_level": 3,
+      "todo_id": {
+        "$oid": "656546bb4bd332cf0b41a021"
+      }
+    },
+    {
+      "description": "Send out invitations",
+      "deadline": "2023-12-18T09:00:00.000Z",
+      "priority_level": 2,
+      "todo_id": {
+        "$oid": "656546bb4bd332cf0b41a022"
+      }
+    },
+    {
+      "description": "Create a cozy movie-watching environment",
+      "priority_level": 1,
+      "todo_id": {
+        "$oid": "656546bb4bd332cf0b41a023"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656283c4ad121ede14fa880c"
+  },
+  "name": "Holiday Feast",
+  "is_active": true,
+  "description": "Celebrate the festive season!",
+  "location": "restaurant",
+  "budget": 1200,
+  "type": "cohosted",
+  "date_time": {
+    "$date": "2023-12-25T19:30:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Claire",
+      "RSVP_status": "Accepted",
+      "contact": "508-689-0012",
+      "guest_id": {
+        "$oid": "65629151ad121ede14fa882b"
+      }
+    },
+    {
+      "name": "Grace",
+      "RSVP_status": "Invited",
+      "contact": "999-0000",
+      "guest_id": {
+        "$oid": "65629157ad121ede14fa882c"
+      }
+    }
+  ],
+  "cohost": [
+    {
+      "$oid": "65626777ad121ede14fa87e4"
+    },
+    {
+      "$oid": "65627316ad121ede14fa87e6"
+    },
+    {
+      "$oid": "65627316ad121ede14fa87e7"
+    }
+  ],
+  "todo": [
+    {
+      "description": "Create a festive menu",
+      "deadline": "2023-12-05T15:00:00.000Z",
+      "priority_level": 1,
+      "todo_id": {
+        "$oid": "656546f8ed32fb7bbf582d79"
+      }
+    },
+    {
+      "description": "Purchase ingredients for the feast",
+      "deadline": "2023-12-08T12:00:00.000Z",
+      "priority_level": 2,
+      "todo_id": {
+        "$oid": "656546f8ed32fb7bbf582d7a"
+      }
+    },
+    {
+      "description": "Decorate the dining area",
+      "deadline": "2023-12-15T18:00:00.000Z",
+      "priority_level": 3,
+      "todo_id": {
+        "$oid": "656546f8ed32fb7bbf582d7b"
+      }
+    },
+    {
+      "description": "Send out invitations to friends and family",
+      "deadline": "2023-12-10T09:00:00.000Z",
+      "priority_level": 2,
+      "todo_id": {
+        "$oid": "656546f8ed32fb7bbf582d7c"
+      }
+    },
+    {
+      "description": "Prepare a holiday playlist",
+      "priority_level": 1,
+      "todo_id": {
+        "$oid": "656546f8ed32fb7bbf582d7d"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656283c4ad121ede14fa880d"
+  },
+  "name": "Game Night",
+  "is_active": true,
+  "description": "Board games and fun!",
+  "location": "friend's house",
+  "budget": 300,
+  "type": "self-owned",
+  "date_time": {
+    "$date": "2023-10-12T19:00:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Hannah",
+      "RSVP_status": "Invited",
+      "contact": "111-2222",
+      "guest_id": {
+        "$oid": "65629168ad121ede14fa882d"
+      }
+    },
+    {
+      "name": "Isaac",
+      "RSVP_status": "Attending",
+      "contact": "333-4444",
+      "guest_id": {
+        "$oid": "6562916dad121ede14fa882e"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "65626777ad121ede14fa87e4"
+  },
+  "todo": [
+    {
+      "description": "Prepare board games",
+      "deadline": "2023-12-15T18:00:00.000Z",
+      "priority_level": 2,
+      "todo_id": {
+        "$oid": "6565473743b39a2a50888c9c"
+      }
+    },
+    {
+      "description": "Set up gaming area",
+      "deadline": "2023-12-17T15:00:00.000Z",
+      "priority_level": 3,
+      "todo_id": {
+        "$oid": "6565473743b39a2a50888c9d"
+      }
+    },
+    {
+      "description": "Order snacks and drinks",
+      "deadline": "2023-12-10T12:00:00.000Z",
+      "priority_level": 1,
+      "todo_id": {
+        "$oid": "6565473743b39a2a50888c9e"
+      }
+    },
+    {
+      "description": "Create a playlist",
+      "deadline": "2023-12-18T14:00:00.000Z",
+      "priority_level": 2,
+      "todo_id": {
+        "$oid": "6565473743b39a2a50888c9f"
+      }
+    },
+    {
+      "description": "Confirm attendance of guests",
+      "priority_level": 1,
+      "todo_id": {
+        "$oid": "6565473743b39a2a50888ca0"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656283c4ad121ede14fa880e"
+  },
+  "name": "Beach Party",
+  "is_active": true,
+  "description": "Sun, sand, and good times!",
+  "location": "beach",
+  "budget": 1000,
+  "type": "cohosted",
+  "date_time": {
+    "$date": "2023-08-20T15:00:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Claire",
+      "RSVP_status": "Accepted",
+      "contact": "508-689-0012",
+      "guest_id": {
+        "$oid": "6562917dad121ede14fa882f"
+      }
+    },
+    {
+      "name": "Jay",
+      "RSVP_status": "Rejected",
+      "contact": "123-456-7890",
+      "guest_id": {
+        "$oid": "65629183ad121ede14fa8830"
+      }
+    }
+  ],
+  "cohost": [
+    {
+      "$oid": "65626777ad121ede14fa87e4"
+    },
+    {
+      "$oid": "65627316ad121ede14fa87e6"
+    },
+    {
+      "$oid": "65627316ad121ede14fa87e7"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656283c4ad121ede14fa880f"
+  },
+  "name": "Tech Meetup",
+  "is_active": true,
+  "description": "Connect with tech enthusiasts!",
+  "location": "conference center",
+  "budget": 600,
+  "type": "self-owned",
+  "date_time": {
+    "$date": "2023-11-05T17:30:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Liam",
+      "RSVP_status": "Attending",
+      "contact": "555-1212",
+      "guest_id": {
+        "$oid": "65629193ad121ede14fa8831"
+      }
+    },
+    {
+      "name": "Mia",
+      "RSVP_status": "Invited",
+      "contact": "555-3434",
+      "guest_id": {
+        "$oid": "65629198ad121ede14fa8832"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "65626777ad121ede14fa87e4"
+  }
+},
+{
+  "_id": {
+    "$oid": "656283c4ad121ede14fa8810"
+  },
+  "name": "Book Club",
+  "is_active": true,
+  "description": "Discuss the latest novel!",
+  "location": "library",
+  "budget": 150,
+  "type": "self-owned",
+  "date_time": {
+    "$date": "2023-11-30T18:30:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Noah",
+      "RSVP_status": "Not Attending",
+      "contact": "888-9999",
+      "guest_id": {
+        "$oid": "656291a3ad121ede14fa8833"
+      }
+    },
+    {
+      "name": "Olivia",
+      "RSVP_status": "Attending",
+      "contact": "999-1111",
+      "guest_id": {
+        "$oid": "656291a9ad121ede14fa8834"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "65627316ad121ede14fa87e8"
+  }
+},
+{
+  "_id": {
+    "$oid": "656283c4ad121ede14fa8811"
+  },
+  "name": "Fitness Challenge",
+  "is_active": true,
+  "description": "Get fit together!",
+  "location": "park",
+  "budget": 250,
+  "type": "self-owned",
+  "date_time": {
+    "$date": "2023-12-02T07:00:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Peter",
+      "RSVP_status": "Invited",
+      "contact": "123-4567",
+      "guest_id": {
+        "$oid": "656291b6ad121ede14fa8835"
+      }
+    },
+    {
+      "name": "Quinn",
+      "RSVP_status": "Attending",
+      "contact": "456-7890",
+      "guest_id": {
+        "$oid": "656291bcad121ede14fa8836"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "65627316ad121ede14fa87e8"
+  }
+},
+{
+  "_id": {
+    "$oid": "656283c4ad121ede14fa8812"
+  },
+  "name": "Art Exhibition",
+  "is_active": true,
+  "description": "Explore the world of art!",
+  "location": "gallery",
+  "budget": 800,
+  "type": "cohosted",
+  "date_time": {
+    "$date": "2023-11-15T16:00:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Claire",
+      "RSVP_status": "Accepted",
+      "contact": "508-689-0012",
+      "guest_id": {
+        "$oid": "656291dbad121ede14fa8837"
+      }
+    },
+    {
+      "name": "Jay",
+      "RSVP_status": "Rejected",
+      "contact": "123-456-7890",
+      "guest_id": {
+        "$oid": "656291e2ad121ede14fa8838"
+      }
+    }
+  ],
+  "cohost": [
+    {
+      "$oid": "65626777ad121ede14fa87e4"
+    },
+    {
+      "$oid": "65627316ad121ede14fa87e6"
+    },
+    {
+      "$oid": "65627316ad121ede14fa87e7"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656283c4ad121ede14fa8813"
+  },
+  "name": "Cooking Class",
+  "is_active": true,
+  "description": "Learn to cook delicious dishes!",
+  "location": "culinary school",
+  "budget": 300,
+  "type": "self-owned",
+  "date_time": {
+    "$date": "2023-09-10T15:30:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Tom",
+      "RSVP_status": "Attending",
+      "contact": "555-7777",
+      "guest_id": {
+        "$oid": "656291f0ad121ede14fa8839"
+      }
+    },
+    {
+      "name": "Ursula",
+      "RSVP_status": "Invited",
+      "contact": "555-9999",
+      "guest_id": {
+        "$oid": "656291f6ad121ede14fa883a"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "65627316ad121ede14fa87eb"
+  }
+},
+{
+  "_id": {
+    "$oid": "656283c4ad121ede14fa8814"
+  },
+  "name": "Gardening Workshop",
+  "is_active": true,
+  "description": "Cultivate your green thumb!",
+  "location": "community garden",
+  "budget": 400,
+  "type": "cohosted",
+  "date_time": {
+    "$date": "2023-08-05T14:00:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Vivian",
+      "RSVP_status": "Not Attending",
+      "contact": "888-5555",
+      "guest_id": {
+        "$oid": "65629203ad121ede14fa883b"
+      }
+    },
+    {
+      "name": "Walter",
+      "RSVP_status": "Attending",
+      "contact": "999-3333",
+      "guest_id": {
+        "$oid": "65629209ad121ede14fa883c"
+      }
+    }
+  ],
+  "cohost": [
+    {
+      "$oid": "65626777ad121ede14fa87ea"
+    },
+    {
+      "$oid": "65627316ad121ede14fa87eb"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656283c4ad121ede14fa8815"
+  },
+  "name": "Board Game Marathon",
+  "is_active": true,
+  "description": "A day of tabletop gaming!",
+  "location": "gaming cafe",
+  "budget": 200,
+  "type": "self-owned",
+  "date_time": {
+    "$date": "2023-10-28T12:00:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Xander",
+      "RSVP_status": "Attending",
+      "contact": "111-4444",
+      "guest_id": {
+        "$oid": "6562921aad121ede14fa883d"
+      }
+    },
+    {
+      "name": "Yasmine",
+      "RSVP_status": "Invited",
+      "contact": "111-5555",
+      "guest_id": {
+        "$oid": "6562921fad121ede14fa883e"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "65627316ad121ede14fa87eb"
+  }
+},
+{
+  "_id": {
+    "$oid": "656283c4ad121ede14fa8816"
+  },
+  "name": "Community Cleanup",
+  "is_active": true,
+  "description": "Make our community shine!",
+  "location": "neighborhood",
+  "budget": 100,
+  "type": "cohosted",
+  "date_time": {
+    "$date": "2023-07-08T09:00:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Zoe",
+      "RSVP_status": "Attending",
+      "contact": "333-1111",
+      "guest_id": {
+        "$oid": "6562922dad121ede14fa883f"
+      }
+    },
+    {
+      "name": "Aaron",
+      "RSVP_status": "Invited",
+      "contact": "333-2222",
+      "guest_id": {
+        "$oid": "6562923fad121ede14fa8840"
+      }
+    }
+  ],
+  "cohost": [
+    {
+      "$oid": "65626777ad121ede14fa87ea"
+    },
+    {
+      "$oid": "65627316ad121ede14fa87eb"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6562e1c73fa07bf49cba1a81"
+  },
+  "name": "Birthday Party",
+  "description": "Celebrate my birthday!",
+  "date_time": {
+    "$date": "2023-12-01T18:00:00.000Z"
+  },
+  "location": "My House",
+  "budget": 500,
+  "type": "self-owned",
+  "host": {
+    "$oid": "65626777ad121ede14fa87e3"
+  },
+  "guests": [
+    {
+      "name": "Gloria",
+      "contact": "gloria_p@outlook.com",
+      "RSVP_status": "Invited",
+      "guest_id": {
+        "$oid": "6562eabde6e8ff35dacf61a7"
+      }
+    }
+  ],
+  "is_active": true
+},
+{
+  "_id": {
+    "$oid": "6563d7bd489ab85406ef6250"
+  },
+  "name": "Christmas Dinner",
+  "description": "Jay's family and Gloria's family are all coming this year.",
+  "date_time": "2023-12-25T16:00",
+  "location": "Home",
+  "budget": "1200",
+  "type": "self-owned",
+  "host": {
+    "$oid": "65627316ad121ede14fa87e6"
+  },
+  "is_active": true
+},
+{
+  "_id": {
+    "$oid": "6566cc1855a7b500e7117640"
+  },
+  "name": "Claire's Birthday Bash",
+  "is_active": true,
+  "description": "Celebrate a special birthday!",
+  "location": "party venue",
+  "budget": 1500,
+  "type": "cohosted",
+  "date_time": {
+    "$date": "2023-11-30T20:00:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Claire",
+      "RSVP_status": "Accepted",
+      "contact": "508-689-0012",
+      "guest_id": {
+        "$oid": "65628a43ad121ede14fa8818"
+      }
+    },
+    {
+      "name": "Jay",
+      "RSVP_status": "Rejected",
+      "contact": "123-456-7890",
+      "guest_id": {
+        "$oid": "65628a51ad121ede14fa8819"
+      }
+    }
+  ],
+  "cohost": [
+    {
+      "$oid": "65627316ad121ede14fa87e7"
+    },
+    {
+      "$oid": "65627316ad121ede14fa87e6"
+    },
+    {
+      "$oid": "65627316ad121ede14fa87e8"
+    }
+  ],
+  "todo": [
+    {
+      "description": "Buy indoor decorations",
+      "deadline": {
+        "$date": "2023-11-28T18:00:00.000Z"
+      },
+      "priority_level": 5,
+      "todo_id": {
+        "$oid": "6562ee8191388230ab9e795f"
+      }
+    },
+    {
+      "description": "Buy a birthday cake",
+      "deadline": "2023-12-15T12:00:00.000Z",
+      "priority_level": 1,
+      "todo_id": {
+        "$oid": "6565461ca976f7df00be7688"
+      }
+    },
+    {
+      "description": "Prepare decorations",
+      "deadline": "2023-12-17T18:00:00.000Z",
+      "priority_level": 2,
+      "todo_id": {
+        "$oid": "6565461ca976f7df00be7689"
+      }
+    },
+    {
+      "description": "Invite guests",
+      "deadline": "2023-12-10T09:00:00.000Z",
+      "priority_level": 3,
+      "todo_id": {
+        "$oid": "6565461ca976f7df00be768a"
+      }
+    },
+    {
+      "description": "Plan activities",
+      "deadline": "2023-12-18T10:00:00.000Z",
+      "priority_level": 2,
+      "todo_id": {
+        "$oid": "6565461ca976f7df00be768b"
+      }
+    },
+    {
+      "description": "Buy gifts",
+      "priority_level": 1,
+      "todo_id": {
+        "$oid": "6565461ca976f7df00be768c"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6566cc4255a7b500e7117642"
+  },
+  "name": "Marketing Meetup",
+  "is_active": true,
+  "description": "Connect with marketing enthusiasts!",
+  "location": "conference center",
+  "budget": 600,
+  "type": "self-owned",
+  "date_time": {
+    "$date": "2023-11-05T17:30:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Liam",
+      "RSVP_status": "Attending",
+      "contact": "555-1212",
+      "guest_id": {
+        "$oid": "65629193ad121ede14fa8831"
+      }
+    },
+    {
+      "name": "Mia",
+      "RSVP_status": "Invited",
+      "contact": "555-3434",
+      "guest_id": {
+        "$oid": "65629198ad121ede14fa8832"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "65626777ad121ede14fa87e4"
+  }
+},
+{
+  "_id": {
+    "$oid": "6566cd2655a7b500e7117644"
+  },
+  "name": "House Warming Party",
+  "is_active": true,
+  "description": "We are officially moving into our new house!",
+  "location": "home",
+  "budget": 2000,
+  "type": "cohosted",
+  "date_time": {
+    "$date": "2023-12-18T14:00:00.000Z"
+  },
+  "guests": [
+    {
+      "name": "Claire",
+      "RSVP_status": "Accepted",
+      "contact": "508-689-0012",
+      "guest_id": {
+        "$oid": "656289bbad121ede14fa8817"
+      }
+    },
+    {
+      "name": "Jay",
+      "contact": "123-456-7890",
+      "RSVP_status": "Accepted",
+      "guest_id": {
+        "$oid": "6562ea6658863745416bbfb6"
+      }
+    },
+    {
+      "name": "Gloria",
+      "contact": "gloria_p@outlook.com",
+      "RSVP_status": "Invited",
+      "guest_id": {
+        "$oid": "6563d0fc47710416216fd237"
+      }
+    },
+    {
+      "name": "Phil",
+      "contact": "phil_dunphy@real.com",
+      "RSVP_status": "Accepted",
+      "guest_id": {
+        "$oid": "6563d13447710416216fd238"
+      }
+    }
+  ],
+  "cohost": [
+    {
+      "$oid": "65627316ad121ede14fa87e6"
+    },
+    {
+      "$oid": "65627316ad121ede14fa87e7"
+    },
+    {
+      "$oid": "65627316ad121ede14fa87e8"
+    }
+  ],
+  "todo": [
+    {
+      "description": "Buy groceries",
+      "deadline": "2023-11-28T18:00:00.000Z",
+      "priority_level": 1,
+      "is_done": true,
+      "todo_id": {
+        "$oid": "65629010ad121ede14fa881b"
+      }
+    },
+    {
+      "description": "Shopping for guest use chinas",
+      "deadline": "2023-11-30T09:00:00.000Z",
+      "priority_level": 3,
+      "is_done": true,
+      "todo_id": {
+        "$oid": "65629041ad121ede14fa881e"
+      }
+    },
+    {
+      "description": "Buy indoor decor",
+      "deadline": "2023-11-28",
+      "priority_level": "4",
+      "todo_id": {
+        "$oid": "6563d2bb47710416216fd239"
+      }
+    },
+    {
+      "description": "Order cake",
+      "deadline": "2023-12-13",
+      "priority_level": "3",
+      "todo_id": {
+        "$oid": "6563d30e47710416216fd23b"
+      }
+    }
+  ],
+  "expenses": [
+    {
+      "amount_spent": 50,
+      "date_spent": "2023-11-20T15:30:00.000Z",
+      "description": "Drinks",
+      "expense_id": {
+        "$oid": "65629057ad121ede14fa881f"
+      }
+    },
+    {
+      "amount_spent": 100,
+      "date_spent": "2023-11-25T12:45:00.000Z",
+      "description": "Indoor Decor",
+      "expense_id": {
+        "$oid": "65629062ad121ede14fa8820"
+      }
+    },
+    {
+      "amount_spent": 120,
+      "date_spent": "2023-12-02T10:00:00.000Z",
+      "description": "Shopping for party T-shirts",
+      "expense_id": {
+        "$oid": "6562906bad121ede14fa8821"
+      }
+    },
+    {
+      "amount_spent": 75,
+      "date_spent": "2023-12-10T08:30:00.000Z",
+      "description": "Coffee and snacks",
+      "expense_id": {
+        "$oid": "65629075ad121ede14fa8822"
+      }
+    },
+    {
+      "amount_spent": 67,
+      "date_spent": "2023-11-15",
+      "description": "Cake tasting",
+      "expense_id": {
+        "$oid": "6563d471489ab85406ef624f"
+      }
+    }
+  ],
+  "service_providers": [
+    {
+      "service_type": "Catering",
+      "contact": "123-456-7890",
+      "location": "Event Hall",
+      "estimated_price": 800,
+      "provider_id": {
+        "$oid": "65629085ad121ede14fa8823"
+      }
+    },
+    {
+      "service_type": "Photography",
+      "contact": "555-789-1234",
+      "location": "On-site",
+      "estimated_price": 500,
+      "provider_id": {
+        "$oid": "65629090ad121ede14fa8824"
+      }
+    },
+    {
+      "service_type": "Floral Arrangements",
+      "contact": "789-123-4567",
+      "location": "Local Flower Shop",
+      "estimated_price": 200,
+      "provider_id": {
+        "$oid": "6562909aad121ede14fa8825"
+      }
+    },
+    {
+      "service_type": "Event Planning",
+      "contact": "321-987-6543",
+      "location": "Consultation Office",
+      "estimated_price": 1000,
+      "provider_id": {
+        "$oid": "656290a5ad121ede14fa8826"
+      }
+    }
+  ]
+}]
