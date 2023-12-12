@@ -22,7 +22,7 @@ async function addSession(userId) {
             mobile: user.mobile,
         }
 
-        await redisClient.hSet(`username:${userId}`, userInfo);
+        await redisClient.hSet(`userInfo:${userId}`, userInfo);
 
         return sid.toString();
     } catch(error) {
@@ -41,7 +41,7 @@ async function getSessionUser(sid) {
         await redisClient.connect();
         const userId = await redisClient.get(sid.toString()) || '';
         if(sid) {
-            const username = await redisClient.hGet(`username:${userId}`, 'username') || '';
+            const username = await redisClient.hGet(`userInfo:${userId}`, 'username') || '';
             return { userId, username };
         }
     } finally {
