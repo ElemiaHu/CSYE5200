@@ -102,17 +102,6 @@ app.get('/api/event/:eventId', async (req, res) => {
     }
 });
 
-// get all guests for a certain event
-// app.get('/api/event/guests/:eventId', async (req, res) => {
-//     const {eventId} = req.params;
-
-//     try {
-//         const guestData = await getEventGuests(eventId);
-//         res.json(guestData);
-//     } catch (error) {
-//         res.status(500).json({ error:'Internal Server Error' });
-//     }
-// });
 
 // add a new guest for a certain event
 app.post('/api/event/guests/:eventId', async (req, res) => {

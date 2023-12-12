@@ -8,7 +8,6 @@ function NewEvent({ onFetchEventData, userId }) {
 
     function onAddNewEvent(eventDetails, userId) {
         fetchAddEvent(eventDetails, userId).then( response => {
-            console.log(response);
             onFetchEventData(userId);
         })
         .catch( error => {
@@ -39,13 +38,13 @@ function NewEvent({ onFetchEventData, userId }) {
                 <Form.Control as="textarea" rows={3} value={eventData?.description || ''} required onInput={(e) => setEventData({...eventData, description: e.target.value})}/>
             </Form.Group>
             <Form.Select onChange={(e) => setEventData({...eventData, type: e.target.value})} className="mb-2 mt-2">
-                <option value="Self-Owned">Self-Owned</option>
-                <option value="Cohosted">Cohosted</option>
+                <option value="self-Owned">Self-Owned</option>
+                <option value="cohosted">Cohosted</option>
             </Form.Select>
 
             <Button onClick={() => {
-                    onAddNewEvent(eventData, userId);
-                    setEventData({ type: 'self-owned' });
+                onAddNewEvent(eventData, userId);
+                setEventData({ type: eventData.type });
             }}>Add</Button>
             
         </Form>

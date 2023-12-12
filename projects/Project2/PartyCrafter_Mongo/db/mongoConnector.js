@@ -75,7 +75,7 @@ async function addEvent(name, description, date_time, location, budget, type, us
             "date_time": date_time,
             "location": location,
             "budget": budget,
-            "type": type
+            "type": type.toLowerCase()
         }
 
         if (type === "self-owned") {
