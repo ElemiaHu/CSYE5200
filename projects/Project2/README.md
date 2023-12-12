@@ -19,3 +19,6 @@ This directory contains every document needed for project 2.
    ```
 3. Data will be added to your local Mongo server and you can run the application with mockup data.
 4. If you want to run the application with a new database, make sure to change the databaseName in the [mongoConnector.js](./PartyCrafter_Mongo/db/mongoConnector.js) file.
+
+## Demonstration Video
+For easy grading purpose, please check out the demonstration video [here](https://youtu.be/5SjnMb6nGTk).
