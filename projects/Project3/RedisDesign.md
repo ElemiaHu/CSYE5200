@@ -8,12 +8,17 @@ The session is automatically deleted when the user logs out.
 #### Data structure details
 
 Session is stored with String.
+
 **Key**: `sid`
+
 **Value**: `userId`
 
 Related User info is stored with Hashes.
+
 **Key**: `userInfo:userId`
+
 e.g. `userInfo:65626777ad121ede14fa87e3`
+
 **Value**:
 ```
 {
@@ -32,13 +37,19 @@ The cached information includes basic event details such as name, description, t
 #### Data structure details
 
 The list of active events is stored with List.
+
 **Key**: `events:userId`
+
 e.g. `events:65626777ad121ede14fa87e3`
+
 **Value**: `eventId`
 
 Related Event info is stored with Hashes.
+
 **Key**: `event:eventId`
+
 e.g. `event:65627cd7ad121ede14fa8803`
+
 **Value**:
 ```
 {
